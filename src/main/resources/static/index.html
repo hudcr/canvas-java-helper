@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canvas Helper</title>
+  <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <h2>Canvas Helper</h2>
+    <div class="stats">
+      <div><span>Upcoming (7d)</span><strong id="upcoming">0</strong></div>
+      <div><span>Overdue</span><strong id="overdue">0</strong></div>
+    </div>
+    <h3>Courses</h3>
+    <ul id="courses"></ul>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button id="toggleSidebar">☰</button>
+      <div>
+        <button id="syncBtn">Sync</button>
+        <button id="settingsBtn">Settings</button>
+      </div>
+    </header>
+
+    <section id="messages" class="messages"></section>
+
+    <div class="composer">
+      <textarea id="input" placeholder="Ask about grades, assignments, study plan..."></textarea>
+      <button id="sendBtn">Send</button>
+    </div>
+  </main>
+</div>
+
+<dialog id="settingsModal">
+  <form method="dialog" id="settingsForm">
+    <h3>Settings</h3>
+    <label>Canvas Base URL <input name="canvas.baseUrl" placeholder="https://YOUR_SCHOOL.instructure.com" /></label>
+    <label>Canvas Access Token <input name="canvas.accessToken" type="password" placeholder="PUT_YOUR_CANVAS_TOKEN_HERE" /></label>
+    <label>OpenAI API Key <input name="openai.apiKey" type="password" placeholder="PUT_YOUR_OPENAI_KEY_HERE" /></label>
+    <menu>
+      <button value="cancel">Close</button>
+      <button id="saveSettings" value="default">Save</button>
+    </menu>
+  </form>
+</dialog>
+<script type="module" src="/app.js"></script>
+</body>
+</html>
